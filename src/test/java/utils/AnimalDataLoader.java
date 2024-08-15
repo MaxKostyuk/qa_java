@@ -41,7 +41,12 @@ public class AnimalDataLoader {
     }
 
     public String getFamilyName(String animal) {
-        Map<String, String> family = (Map<String, String>) data.get("animalData").get("family");
+        Map<String, String> family = (Map<String, String>) data.get("animalData").get("families");
         return family.get(animal);
+    }
+
+    public String getExceptionMessage(String exceptionName) {
+        Map<String, String> messages = (Map<String, String>) data.get("messages").get("exceptions");
+        return messages.get(exceptionName);
     }
 }
