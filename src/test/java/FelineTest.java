@@ -1,12 +1,21 @@
 import com.example.Feline;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
+import utils.AnimalDataLoader;
 
+import java.io.IOException;
 import java.util.List;
 
 public class FelineTest {
     private Feline feline;
+    private static AnimalDataLoader dataLoader;
+
+    @BeforeAll
+    public static void initializeData() throws IOException {
+        dataLoader = AnimalDataLoader.getInstance();
+    }
 
     @BeforeEach
     public void setUp() {
@@ -15,15 +24,17 @@ public class FelineTest {
 
 
     @Test
-    public void getFamilyTestShouldReturnKoshachiy() {
-        String family = feline.getFamily();
-        Assertions.assertEquals("Кошачьи", family);
+    public void getFamilyTestShouldReturnFelineName() {
+        String expectedFamily = dataLoader.getFamilyName("feline");
+        String actualFamily = feline.getFamily();
+        Assertions.assertEquals(expectedFamily, actualFamily);
     }
 
     @Test
-    public void eatMeatTestReturnListForPredator() throws Exception {
-        List<String> food = feline.eatMeat();
-        Assertions.assertEquals(List.of("Животные", "Птицы", "Рыба"), food);
+    public void eatMeatTestReturnFoodPredator() throws Exception {
+        List<String> expectedList = dataLoader.getFoodForType("predator");
+        List<String> actualList = feline.eatMeat();
+        Assertions.assertEquals(expectedList, actualList);
     }
 
     @Test

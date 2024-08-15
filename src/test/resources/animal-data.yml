@@ -1,0 +1,16 @@
+animalData:
+  types:
+    predator: "Хищник"
+    herbivore: "Травоядное"
+  food:
+    predator:
+      - "Животные"
+      - "Птицы"
+      - "Рыба"
+    herbivore:
+      - "Трава"
+      - "Различные растения"
+  sounds:
+    cat: "Мяу"
+  family:
+    feline: "Кошачьи"
