@@ -47,9 +47,7 @@ public class AnimalTest {
 
     @Test
     public void getFoodTestShouldThrowExceptionWithIncorrectTypeMessage() {
-        Exception exception = Assertions.assertThrows(Exception.class, () -> {
-            animal.getFood(null);
-        });
+        Exception exception = Assertions.assertThrows(Exception.class, () -> animal.getFood(null));
         String expectedMessage = dataLoader.getExceptionMessage("incorrectAnimalType");
         String actualMessage = exception.getMessage();
         Assertions.assertEquals(expectedMessage, actualMessage);

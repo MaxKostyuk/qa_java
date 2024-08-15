@@ -49,4 +49,14 @@ public class AnimalDataLoader {
         Map<String, String> messages = (Map<String, String>) data.get("messages").get("exceptions");
         return messages.get(exceptionName);
     }
+
+    public List<String> getAlexFriends() {
+        Map<String, List<String>> alexData = (Map<String, List<String>>) data.get("animalData").get("alex");
+        return alexData.get("friends");
+    }
+
+    public String getAlexPlaceOfLiving() {
+        Map<String, String> alexData = (Map<String, String>) data.get("animalData").get("alex");
+        return alexData.get("place");
+    }
 }
