@@ -1,3 +1,5 @@
+package feline;
+
 import com.example.Feline;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;

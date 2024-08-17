@@ -1,3 +1,5 @@
+package cat;
+
 import com.example.Cat;
 import com.example.Feline;
 import org.junit.jupiter.api.Assertions;

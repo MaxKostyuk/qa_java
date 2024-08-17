@@ -15,7 +15,7 @@ public class AnimalDataLoader {
 
     private AnimalDataLoader() throws IOException {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-        data = mapper.readValue(new File("src/test/resources/animal-data.yml"), Map.class);
+        data = mapper.readValue(new File("src/test/resources/expectedConstants.yml"), Map.class);
     }
 
     public static AnimalDataLoader getInstance() throws IOException {

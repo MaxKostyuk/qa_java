@@ -1,3 +1,5 @@
+package alex;
+
 import com.example.Alex;
 import com.example.Feline;
 import org.junit.jupiter.api.Assertions;
@@ -37,7 +39,7 @@ public class AlexTest {
         List<String> actualList = alex.getFriends();
         Assertions.assertEquals(expectedList, actualList);
     }
-    
+
     @Test
     public void getPlaceOfLivingShouldReturnPlace() {
         String expectedPlace = dataLoader.getAlexPlaceOfLiving();

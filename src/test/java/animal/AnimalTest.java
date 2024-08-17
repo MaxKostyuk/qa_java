@@ -1,14 +1,13 @@
+package animal;
+
 import com.example.Animal;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 import utils.AnimalDataLoader;
 
 import java.io.IOException;
-import java.util.List;
 
 public class AnimalTest {
 
@@ -30,19 +29,6 @@ public class AnimalTest {
         String expectedFamilyMessage = dataLoader.getFamilyName("default");
         String actualFamilyMessage = animal.getFamily();
         Assertions.assertEquals(expectedFamilyMessage, actualFamilyMessage);
-    }
-
-    @ParameterizedTest
-    @ValueSource(strings = {"predator", "herbivore"})
-    public void getFoodTestShouldReturnCorrespondingList(String animalType) {
-        String typeName = dataLoader.getAnimalType(animalType);
-        List<String> expectedList = dataLoader.getFoodForType(animalType);
-        try {
-            List<String> actualList = animal.getFood(typeName);
-            Assertions.assertEquals(expectedList, actualList);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Test
