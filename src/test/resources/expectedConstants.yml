@@ -22,6 +22,13 @@ animalData:
       - "Мелман"
     place:
       "Нью-Йоркский зоопарк"
+  sexName:
+    male: "Самец"
+    female: "Самка"
+  hasMane:
+    male: "true"
+    female: "false"
 messages:
   exceptions:
     incorrectAnimalType: "Неизвестный вид животного, используйте значение Травоядное или Хищник"
+    incorrectAnimalSex: "Используйте допустимые значения пола животного - самей или самка"

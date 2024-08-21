@@ -45,6 +45,16 @@ public class AnimalDataLoader {
         return family.get(animal);
     }
 
+    public String getSexName(String sex) {
+        Map<String, String> sexName = (Map<String, String>) data.get("animalData").get("sexName");
+        return sexName.get(sex);
+    }
+
+    public boolean getHasManeForSex(String sex) {
+        Map<String, String> hasMane = (Map<String, String>) data.get("animalData").get("hasMane");
+        return Boolean.parseBoolean(hasMane.get(sex));
+    }
+
     public String getExceptionMessage(String exceptionName) {
         Map<String, String> messages = (Map<String, String>) data.get("messages").get("exceptions");
         return messages.get(exceptionName);

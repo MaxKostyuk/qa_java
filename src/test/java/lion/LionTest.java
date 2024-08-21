@@ -2,6 +2,7 @@ package lion;
 
 import com.example.Feline;
 import com.example.Lion;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,8 +27,16 @@ public class LionTest {
     }
 
     @BeforeEach
-    public void setUp() {
-        lion = new Lion(true, feline);
+    public void setUp() throws Exception {
+        lion = new Lion("Самец", feline);
+    }
+
+    @Test
+    public void constructorIncorrectSexShouldThrowException() {
+        Exception exception = Assertions.assertThrows(Exception.class, () -> new Lion(null, feline));
+        String expectedMessage = dataLoader.getExceptionMessage("incorrectAnimalSex");
+        String actualMessage = exception.getMessage();
+        Assertions.assertEquals(expectedMessage, actualMessage);
     }
 
     @Test

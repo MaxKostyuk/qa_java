@@ -7,9 +7,15 @@ public class Lion {
     private final boolean hasMane;
     private final Feline feline;
 
-    public Lion(boolean isMale, Feline feline){
-        this.hasMane = isMale;
+    public Lion(String sex, Feline feline) throws Exception {
         this.feline = feline;
+        if ("Самец".equals(sex)) {
+            hasMane = true;
+        } else if ("Самка".equals(sex)) {
+            hasMane = false;
+        } else {
+            throw new Exception("Используйте допустимые значения пола животного - самей или самка");
+        }
     }
 
 
