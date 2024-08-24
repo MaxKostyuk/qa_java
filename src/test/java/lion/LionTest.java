@@ -13,6 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import utils.AnimalDataLoader;
 
 import java.io.IOException;
+import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
 public class LionTest {
@@ -42,6 +43,8 @@ public class LionTest {
     @Test
     public void getFoodTestShouldCallFelineGetFoodOnceWithParameterPredator() throws Exception {
         String predatorString = dataLoader.getAnimalType("predator");
+        List<String> foodList = dataLoader.getFoodForType(predatorString);
+        Mockito.when(feline.getFood(predatorString)).thenReturn(foodList);
         lion.getFood();
         Mockito.verify(feline, Mockito.times(1)).getFood(predatorString);
     }
