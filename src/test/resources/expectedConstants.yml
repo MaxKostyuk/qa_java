@@ -1,0 +1,34 @@
+animalData:
+  types:
+    predator: "Хищник"
+    herbivore: "Травоядное"
+  food:
+    predator:
+      - "Животные"
+      - "Птицы"
+      - "Рыба"
+    herbivore:
+      - "Трава"
+      - "Различные растения"
+  sounds:
+    cat: "Мяу"
+  families:
+    default: "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи"
+    feline: "Кошачьи"
+  alex:
+    friends:
+      - "Марти"
+      - "Глория"
+      - "Мелман"
+    place:
+      "Нью-Йоркский зоопарк"
+  sexName:
+    male: "Самец"
+    female: "Самка"
+  hasMane:
+    male: "true"
+    female: "false"
+messages:
+  exceptions:
+    incorrectAnimalType: "Неизвестный вид животного, используйте значение Травоядное или Хищник"
+    incorrectAnimalSex: "Используйте допустимые значения пола животного - самей или самка"
